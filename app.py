@@ -44,7 +44,7 @@ Here you can chat with our AI assistant to explore collections, get styling idea
 
 # --- OpenAI Setup ---
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
-st.write("secret key loaded successfully")
+st.success("secret key loaded successfully")
 
 user_input = st.text_input("💬 Ask your AI stylist anything:")
 
@@ -52,7 +52,7 @@ if user_input:
     st.markdown(f"<p style='color:#b03060;font-weight:500;'>🧵 Our stylist is thinking about: <i>{user_input}</i></p>", unsafe_allow_html=True)
     with st.spinner("✨ Styling suggestions loading..."):
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="gpt-40-mini",
             messages=[
                 {"role": "system", "content": "You are a creative fashion stylist for Dil Se Nandhana."},
                 {"role": "user", "content": user_input}
