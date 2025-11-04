@@ -58,7 +58,7 @@ if user_input:
                     {"role": "user", "content": user_input}
                 ]
             )
-            reply = response.choices[0].message["content"]
+            reply = response.choices[0].message.content
             st.success(f"💖 {reply}")
         except Exception as e:
             st.error(f"error: {e}")
