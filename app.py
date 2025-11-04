@@ -52,15 +52,16 @@ if user_input:
     st.markdown(f"<p style='color:#b03060;font-weight:500;'>🧵 Our stylist is thinking about: <i>{user_input}</i></p>", unsafe_allow_html=True)
     with st.spinner("✨ Styling suggestions loading..."):
         try :
-             response = client.chat.completions.create(
+            response = client.chat.completions.create(
                 model="gpt-40-mini",
                 messages=[
                     {"role": "system", "content": "You are a creative fashion stylist for Dil Se Nandhana."},
                     {"role": "user", "content": user_input}
                 ]
-             )
-        except Exception e:
-            st.error(f"error: {e}")
+            )
             reply = response.choices[0].message.content
             st.success(f"💖 {reply}")
+        except Exception e:
+            st.error(f"error: {e}")
+            
         
