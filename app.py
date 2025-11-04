@@ -1,5 +1,5 @@
 import streamlit as st
-from openai import OpenAI
+import openai
 
 # --- Custom CSS for Styling ---
 st.markdown("""
@@ -43,7 +43,7 @@ Here you can chat with our AI assistant to explore collections, get styling idea
 """)
 
 # --- OpenAI Setup ---
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+openai.api_key = st.secrets["OPENAI_API_KEY"])
 st.success("secret key loaded successfully")
 
 user_input = st.text_input("💬 Ask your AI stylist anything:")
@@ -59,7 +59,7 @@ if user_input:
                     {"role": "user", "content": user_input}
                 ]
             )
-            reply = response.choices[0].message.content
+            reply = response.choices[0].message["content"]
             st.success(f"💖 {reply}")
         except Exception as e:
             st.error(f"error: {e}")
