@@ -57,5 +57,5 @@ if user_input:
                 {"role": "user", "content": user_input}
             ]
         )
-        answer = response.choices[0].message.content
-        st.success(f"💖 {answer}")
+        reply = response.choices[0].message.content
+        st.success(f"💖 {reply}")
