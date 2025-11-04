@@ -44,6 +44,7 @@ Here you can chat with our AI assistant to explore collections, get styling idea
 
 # --- OpenAI Setup ---
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+st.write("secret key loaded successfully")
 
 user_input = st.text_input("💬 Ask your AI stylist anything:")
 
