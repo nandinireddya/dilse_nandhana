@@ -61,7 +61,7 @@ if user_input:
             )
             reply = response.choices[0].message.content
             st.success(f"💖 {reply}")
-        except Exception e:
+        except Exception as e:
             st.error(f"error: {e}")
             
         
