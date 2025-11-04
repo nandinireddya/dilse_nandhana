@@ -52,7 +52,7 @@ if user_input:
     with st.spinner("✨ Styling suggestions loading..."):
         try :
             response = client.chat.completions.create(
-                model="gpt-40-mini",
+                model="gpt-4o-mini",
                 messages=[
                     {"role": "system", "content": "You are a creative fashion stylist for Dil Se Nandhana."},
                     {"role": "user", "content": user_input}
